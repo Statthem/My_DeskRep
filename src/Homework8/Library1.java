@@ -50,7 +50,7 @@ public class Library1 {
                     try {
                     	int random = rand.nextInt(5000)+1000;
                   
-                    	System.out.println(" »–»À»÷¿");
+                    
                     	
                     	for(int i  = 1;i<=3;i++){
                         Thread.sleep(random/3);
