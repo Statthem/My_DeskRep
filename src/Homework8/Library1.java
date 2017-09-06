@@ -1,6 +1,7 @@
 package Homework8;
 
 
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.Semaphore;
 
@@ -16,7 +17,7 @@ public class Library1 {
         int maxAmount=scanner.nextInt();
         if(maxAmount<=0){System.out.println("Неверно введено maxAmount!");}
         
-       
+        Random rand = new Random();
 
         Semaphore SEMAPHORE = new Semaphore(maxAmount);
         Semaphore Door = new Semaphore(1);
@@ -47,7 +48,8 @@ public class Library1 {
                     System.out.println("["+x+"] Вошел в библеотеку");
 
                     try {
-                    	int random = (int)Math.random()*5000+1000;
+                    	int random = rand.nextInt(5000)+1000;
+                    //	System.out.println(random);
                     	for(int i  = 1;i<=3;i++){
                         Thread.sleep(random/3);
                         System.out.println("["+x+"] Читает книгу..." );
